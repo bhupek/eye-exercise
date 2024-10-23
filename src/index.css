@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Enhanced animations for each exercise type */
+@keyframes palms {
+  0% { transform: translateX(-20px) translateY(5px) rotate(-5deg); }
+  50% { transform: translateX(20px) translateY(-5px) rotate(5deg); }
+  100% { transform: translateX(-20px) translateY(5px) rotate(-5deg); }
+}
+
+@keyframes cover {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes focus {
+  0%, 100% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(100px) scale(0.8); }
+  75% { transform: translateX(-100px) scale(0.8); }
+}
+
+@keyframes roll {
+  0% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(90deg) translateX(50px); }
+  50% { transform: rotate(180deg) translateX(0); }
+  75% { transform: rotate(270deg) translateX(-50px); }
+  100% { transform: rotate(360deg) translateX(0); }
+}
+
+@keyframes eight {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(50px, -30px); }
+  50% { transform: translate(0, -60px); }
+  75% { transform: translate(-50px, -30px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes side {
+  0%, 100% { transform: translateX(-100px); }
+  50% { transform: translateX(100px); }
+}
+
+@keyframes diagonal {
+  0% { transform: translate(-50px, -50px); }
+  50% { transform: translate(50px, 50px); }
+  100% { transform: translate(-50px, -50px); }
+}
+
+@keyframes blink {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+}
+
+@keyframes zoom {
+  0% { transform: scale(0.5) translateZ(0); }
+  50% { transform: scale(1.5) translateZ(100px); }
+  100% { transform: scale(0.5) translateZ(0); }
+}
+
+@keyframes distance {
+  0% { transform: scale(1) translateZ(0); filter: blur(0); }
+  50% { transform: scale(0.5) translateZ(-100px); filter: blur(2px); }
+  100% { transform: scale(1) translateZ(0); filter: blur(0); }
+}
+
+@keyframes massage {
+  0% { transform: rotate(0deg) scale(1); }
+  33% { transform: rotate(120deg) scale(0.9); }
+  66% { transform: rotate(240deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes candle {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 200, 0, 0.5); }
+  50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 200, 0, 0.8); }
+}
+
+/* Exercise animation styles */
+.exercise-animation {
+  @apply flex items-center justify-center w-full h-full relative;
+}
+
+.exercise-animation div {
+  @apply transition-all duration-300;
+}
+
+.exercise-animation.palms div {
+  @apply bg-blue-500;
+  animation: palms 3s infinite ease-in-out;
+}
+
+.exercise-animation.cover div {
+  @apply bg-green-500;
+  animation: cover 2s infinite ease-in-out;
+}
+
+.exercise-animation.focus div {
+  @apply bg-purple-500;
+  animation: focus 4s infinite ease-in-out;
+}
+
+.exercise-animation.roll div {
+  @apply bg-red-500;
+  animation: roll 3s infinite linear;
+}
+
+.exercise-animation.eight div {
+  @apply bg-indigo-500;
+  animation: eight 4s infinite ease-in-out;
+}
+
+.exercise-animation.side div {
+  @apply bg-yellow-500;
+  animation: side 2s infinite ease-in-out;
+}
+
+.exercise-animation.diagonal div {
+  @apply bg-pink-500;
+  animation: diagonal 2s infinite ease-in-out;
+}
+
+.exercise-animation.blink div {
+  @apply bg-teal-500;
+  animation: blink 1s infinite ease-in-out;
+}
+
+.exercise-animation.zoom div {
+  @apply bg-orange-500;
+  animation: zoom 3s infinite ease-in-out;
+}
+
+.exercise-animation.distance div {
+  @apply bg-cyan-500;
+  animation: distance 3s infinite ease-in-out;
+}
+
+.exercise-animation.massage div {
+  @apply bg-emerald-500;
+  animation: massage 4s infinite ease-in-out;
+}
+
+.exercise-animation.candle div {
+  @apply bg-yellow-400;
+  animation: candle 2s infinite ease-in-out;
+}
